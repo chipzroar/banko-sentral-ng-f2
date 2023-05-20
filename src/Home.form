@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="4f" green="13" red="c" type="rgb"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace pref="151" max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="24" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="286" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                      <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="410" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" pref="356" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="395" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="100" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="123" max="32767" attributes="0"/>
+              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="72" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Immortal Ako!!!!! &lt;3"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
+        <Property name="text" type="java.lang.String" value="i&#x2665; &#x2665;m&#x2665;i&#x2665;s&#x2665;s&#x2665; &#x2665;h&#x2665;e&#x2665;r&#x2665; &#x2665;s&#x2665;o&#x2665; &#x2665;m&#x2665;u&#x2665;c&#x2665;h"/>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="\ud83c\udf4e  \ud83c\udf80  \ud835\udcbe \ud835\udcc2\ud835\udcbe\ud835\udcc8\ud835\udcc8 \ud835\udcbd\ud835\udc52\ud835\udcc7 \ud835\udcc8\ud83c\udf6c \ud835\udcc2\ud835\udcca\ud835\udcb8\ud835\udcbd  \ud83c\udf80  \ud83c\udf4e" containsInvalidXMLChars="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="15" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x2dc;&#x201d;*&#xb0;&#x2022;.&#x2dc;&#x201d;*&#xb0;&#x2022; I find myself lost in the quiet moments, &#x2022;&#xb0;*&#x201d;&#x2dc;.&#x2022;&#xb0;*&#x201d;&#x2dc;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="15" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="\ud83c\udd86\ud83c\udd77\ud83c\udd74\ud83c\udd81\ud83c\udd74 \ud83c\udd83\ud83c\udd77\ud83c\udd74 \ud83c\udd86\ud83c\udd7e\ud83c\udd81\ud83c\udd7b\ud83c\udd73 \ud83c\udd82\ud83c\udd7b\ud83c\udd7e\ud83c\udd86\ud83c\udd82 \ud83c\udd73\ud83c\udd7e\ud83c\udd86\ud83c\udd7d \ud83c\udd79\ud83c\udd84\ud83c\udd82\ud83c\udd83 \ud83c\udd74\ud83c\udd7d\ud83c\udd7e\ud83c\udd84\ud83c\udd76\ud83c\udd77 \ud83c\udd75\ud83c\udd7e\ud83c\udd81 \ud83c\udd7c\ud83c\udd74 \ud83c\udd83\ud83c\udd7e \ud83c\udd81\ud83c\udd74\ud83c\udd70\ud83c\udd7b\ud83c\udd78\ud83c\udd89\ud83c\udd74 \ud83c\udd88\ud83c\udd7e\ud83c\udd84&apos;\ud83c\udd81\ud83c\udd74 \ud83c\udd7d\ud83c\udd7e\ud83c\udd83 \ud83c\udd83\ud83c\udd77\ud83c\udd74\ud83c\udd81\ud83c\udd74." containsInvalidXMLChars="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel6">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="20" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&#x1d40;&#x2b0;&#x1d49; &#x2b7;&#x1d52;&#x2b3;&#x2e1;&#x1d48; &#x2071;&#x2e2;&#x207f;&apos;&#x1d57; &#x1d43;&#x2e2; &#x1d47;&#x2b3;&#x2071;&#x1d4d;&#x2b0;&#x1d57; &#x2b7;&#x2071;&#x1d57;&#x2b0;&#x1d52;&#x1d58;&#x1d57; &#x2b8;&#x1d52;&#x1d58;&#x2b3; &#x2e1;&#x1d43;&#x1d58;&#x1d4d;&#x2b0;&#x1d57;&#x1d49;&#x2b3;, &#x1d43;&#x207f;&#x1d48; &#x1d57;&#x2b0;&#x1d49; &#x207f;&#x2071;&#x1d4d;&#x2b0;&#x1d57;&#x2e2; &#x1d43;&#x2b3;&#x1d49; &#x1d9c;&#x1d52;&#x2e1;&#x1d48;&#x1d49;&#x2b3; &#x2b7;&#x2071;&#x1d57;&#x2b0;&#x1d52;&#x1d58;&#x1d57; &#x2b8;&#x1d52;&#x1d58;&#x2b3; &#x2b7;&#x1d43;&#x2b3;&#x1d50;&#x1d57;&#x2b0;. "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="16" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="(&#x3063;&#x25d4;&#x25e1;&#x25d4;)&#x3063; &#x2665; I miss the way your eyes sparkled when you spoke about your dreams, the way your hand fit perfectly in mine. &#x2665;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="\ud83c\udf20&#x22c6;  \ud83c\udf80  \ud835\udc3c \ud835\udcc2\ud835\udcbe\ud835\udcc8\ud835\udcc8 \ud83d\udc99\ud835\udcca\ud835\udcc7 \ud835\udcc8\ud835\udcbd\ud835\udcb6\ud835\udcc7\ud835\udc52\ud835\udcb9 \ud835\udcc8\ud835\udcc2\ud835\udcbe\ud835\udcc1\ud835\udc52\ud835\udcc8, &#x2740;\ud835\udcca\ud835\udcc7 \ud835\udcc8\ud835\udcbd\ud835\udcb6\ud835\udcc7\ud835\udc52\ud835\udcb9 \ud835\udcc8\ud835\udc52\ud835\udcb8\ud835\udcc7\ud835\udc52\ud835\udcc9\ud835\udcc8, \ud835\udcb6\ud835\udcc3\ud835\udcb9 \ud83c\udf6c\ud835\udcca\ud835\udcc7 \ud835\udcc8\ud835\udcbd\ud835\udcb6\ud835\udcc7\ud835\udc52\ud835\udcb9 \ud835\udcc8\ud835\udcbe\ud835\udcc1\ud835\udc52\ud835\udcc3\ud835\udcb8\ud835\udc52\ud835\udcc8.  \ud83c\udf80  &#x22c6;\ud83c\udf20" containsInvalidXMLChars="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="20" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="L&#x34e;i&#x34e;f&#x34e;e&#x34e; &#x34e;w&#x34e;i&#x34e;t&#x34e;h&#x34e;o&#x34e;u&#x34e;t&#x34e; &#x34e;y&#x34e;o&#x34e;u&#x34e; &#x34e;f&#x34e;e&#x34e;e&#x34e;l&#x34e;s&#x34e; &#x34e;l&#x34e;i&#x34e;k&#x34e;e&#x34e; &#x34e;a&#x34e; &#x34e;m&#x34e;o&#x34e;v&#x34e;i&#x34e;e&#x34e; &#x34e;t&#x34e;h&#x34e;a&#x34e;t&#x34e;&apos;&#x34e;s&#x34e; &#x34e;l&#x34e;o&#x34e;s&#x34e;t&#x34e; &#x34e;i&#x34e;t&#x34e;s&#x34e; &#x34e;c&#x34e;o&#x34e;l&#x34e;o&#x34e;r&#x34e;.&#x34e;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel10">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="20" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="I YE&#x15e9;&#x1587;&#x144e; &#x15b4;O&#x1587; T&#x157c;E &#x15ea;&#x15e9;Y &#x15ef;&#x157c;E&#x144e; &#x15ea;I&#x1515;T&#x15e9;&#x144e;&#x1455;E &#x144e;O &#x14aa;O&#x144e;GE&#x1587; KEE&#x146d;&#x1515; &#x144c;&#x1515; &#x15e9;&#x146d;&#x15e9;&#x1587;T."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel11">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="15" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="\ud83c\udd44\ud83c\udd3d\ud83c\udd43\ud83c\udd38\ud83c\udd3b \ud83c\udd43\ud83c\udd37\ud83c\udd34\ud83c\udd3d, \ud83c\udd38 \ud83c\udd37\ud83c\udd3e\ud83c\udd3b\ud83c\udd33 \ud83c\udd3e\ud83c\udd3d \ud83c\udd43\ud83c\udd3e \ud83c\udd43\ud83c\udd37\ud83c\udd34 \ud83c\udd3c\ud83c\udd34\ud83c\udd3c\ud83c\udd3e\ud83c\udd41\ud83c\udd38\ud83c\udd34\ud83c\udd42, \ud83c\udd43\ud83c\udd37\ud83c\udd34 \ud83c\udd34\ud83c\udd32\ud83c\udd37\ud83c\udd3e\ud83c\udd34\ud83c\udd42 \ud83c\udd3e\ud83c\udd35 \ud83c\udd48\ud83c\udd3e\ud83c\udd44\ud83c\udd41 \ud83c\udd3b\ud83c\udd30\ud83c\udd44\ud83c\udd36\ud83c\udd37\ud83c\udd43\ud83c\udd34\ud83c\udd41, \ud83c\udd43\ud83c\udd37\ud83c\udd34 \ud83c\udd38\ud83c\udd3c\ud83c\udd3f\ud83c\udd41\ud83c\udd38\ud83c\udd3d\ud83c\udd43 \ud83c\udd3e\ud83c\udd35 \ud83c\udd48\ud83c\udd3e\ud83c\udd44\ud83c\udd41 \ud83c\udd43\ud83c\udd3e\ud83c\udd44\ud83c\udd32\ud83c\udd37." containsInvalidXMLChars="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel12">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Helvetica Neue" size="20" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="\ud83d\udc33 &#x22c6; \ud83d\udc25  \ud83c\udf80  \ud835\udcb4&#x2741;\ud835\udcca \ud835\udcb6\ud835\udcc7\ud835\udc52 \ud835\udcb9\ud835\udc52\ud835\udc52\ud835\udcc5\ud835\udcc1\ud835\udcce \ud835\udcc2\ud835\udcbe\ud835\udcc8\ud835\udcc8\ud835\udc52\ud835\udcb9, \ud835\udcc2\ud83d\udcae\ud835\udcc7\ud835\udc52 \ud835\udcc9\ud835\udcbd\ud835\udcb6\ud835\udcc3 \ud835\udccc\ud83d\udc8d\ud835\udcc7\ud835\udcb9\ud835\udcc8 \ud835\udcb8\ud835\udcb6\ud835\udcc3 \ud835\udcb6\ud835\udcb9\ud835\udc52\ud835\udcc6\ud835\udcca\ud835\udcb6\ud835\udcc9\ud835\udc52\ud835\udcc1\ud835\udcce \ud835\udc52\ud835\udccd\ud835\udcc5\ud835\udcc7\ud835\udc52\ud835\udcc8\ud835\udcc8.  \ud83c\udf80  \ud83d\udc25 &#x22c6; \ud83d\udc33" containsInvalidXMLChars="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel13">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="(&#xaf;&#xb4;&#x2022;._.&#x2022;   \ud83c\udf80  - \ud835\udca6\ud835\udc52\ud835\udcc3\ud835\udcbf\ud835\udcbe\ud835\udc52 \ud835\udc35\ud835\udcb6\ud835\udcc1&#x2661;\ud835\udcc3\ud835\udcb6 \ud83e\udd70\ud83e\udd72\ud83d\ude2d\ud83e\udd7a  \ud83c\udf80   &#x2022;._.&#x2022;&#xb4;&#xaf;(" containsInvalidXMLChars="true"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
