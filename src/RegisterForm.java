@@ -68,7 +68,7 @@ public class RegisterForm extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPasswordFieldConfirm = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
-        jDateChooserBirthDate = new com.toedter.calendar.JDateChooser();
+        jDateChooserBirthDate = new org.netbeans.modules.form.InvalidComponent();
         jTextFieldFirstName = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -226,10 +226,6 @@ public class RegisterForm extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("BirthDate:");
-
-        jDateChooserBirthDate.setBackground(new java.awt.Color(29, 38, 125));
-        jDateChooserBirthDate.setForeground(new java.awt.Color(255, 255, 255));
-        jDateChooserBirthDate.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
 
         jTextFieldFirstName.setBackground(new java.awt.Color(29, 38, 125));
         jTextFieldFirstName.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -527,7 +523,7 @@ public class RegisterForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonRegister;
-    private com.toedter.calendar.JDateChooser jDateChooserBirthDate;
+    private org.netbeans.modules.form.InvalidComponent jDateChooserBirthDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

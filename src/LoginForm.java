@@ -268,13 +268,20 @@ public class LoginForm extends javax.swing.JFrame {
             rs = ps.executeQuery();
             
             if(rs.next()) {
-                Home home = new Home();
-                home.setVisible(true);
-                home.pack();
-                home.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                if(rs.getInt("userType") == 0) {
+                    CustomerView home = new CustomerView(rs.getInt("userID"));
+                    home.setVisible(true);
+                    home.pack();
+                } else if(rs.getInt("userType") == 1) {
+                    EmployeeView home = new EmployeeView();
+                    home.setVisible(true);
+                    home.pack();
+                }
                 this.dispose();
             } else {
-                JOptionPane.showMessageDialog(null, "Incorrect Usernmae or Password", "Login Failed", JOptionPane.ERROR_MESSAGE);
+                // Edit instead sa JOptionPane
+                DisplayLoginError loginError = new DisplayLoginError();
+                loginError.setVisible(true);
             }
         } catch (SQLException ex) {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
