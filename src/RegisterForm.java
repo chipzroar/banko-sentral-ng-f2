@@ -68,7 +68,6 @@ public class RegisterForm extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jPasswordFieldConfirm = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
-        jDateChooserBirthDate = new org.netbeans.modules.form.InvalidComponent();
         jTextFieldFirstName = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -78,6 +77,7 @@ public class RegisterForm extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaAddress = new javax.swing.JTextArea();
+        jDateChooserBirthDate = new com.toedter.calendar.JDateChooser();
 
         jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -300,20 +300,20 @@ public class RegisterForm extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28)
+                                .addComponent(jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextFieldFirstName, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jDateChooserBirthDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextFieldFirstName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                                 .addComponent(jTextFieldMiddleName, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextFieldLastName, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jTextFieldUserName, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jPasswordField)
                                 .addComponent(jPasswordFieldConfirm)
-                                .addComponent(jDateChooserBirthDate, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                                 .addComponent(jTextFieldEmail)
-                                .addComponent(jTextFieldPhoneNumber))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(jButtonRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFieldPhoneNumber)))
                         .addContainerGap(36, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -523,7 +523,7 @@ public class RegisterForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancel;
     private javax.swing.JButton jButtonRegister;
-    private org.netbeans.modules.form.InvalidComponent jDateChooserBirthDate;
+    private com.toedter.calendar.JDateChooser jDateChooserBirthDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

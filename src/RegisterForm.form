@@ -193,21 +193,21 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jScrollPane1" alignment="0" min="-2" pref="312" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jButtonCancel" min="-2" pref="106" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="jButtonRegister" min="-2" pref="106" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jTextFieldFirstName" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jDateChooserBirthDate" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTextFieldFirstName" alignment="0" pref="242" max="32767" attributes="0"/>
                                   <Component id="jTextFieldMiddleName" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextFieldLastName" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextFieldUserName" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jPasswordField" max="32767" attributes="0"/>
                                   <Component id="jPasswordFieldConfirm" max="32767" attributes="0"/>
-                                  <Component id="jDateChooserBirthDate" pref="242" max="32767" attributes="0"/>
                                   <Component id="jTextFieldEmail" alignment="1" max="32767" attributes="0"/>
                                   <Component id="jTextFieldPhoneNumber" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jButtonCancel" min="-2" pref="106" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="jButtonRegister" min="-2" pref="106" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="36" max="32767" attributes="0"/>
@@ -482,19 +482,6 @@
             <Property name="text" type="java.lang.String" value="BirthDate:"/>
           </Properties>
         </Component>
-        <Component class="org.netbeans.modules.form.InvalidComponent" name="jDateChooserBirthDate">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="7d" green="26" red="1d" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Helvetica Neue" size="14" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldFirstName">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -614,6 +601,8 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="com.toedter.calendar.JDateChooser" name="jDateChooserBirthDate">
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>
