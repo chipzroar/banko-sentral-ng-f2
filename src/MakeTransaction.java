@@ -21,10 +21,12 @@ public class MakeTransaction extends javax.swing.JFrame {
     double Balance;
     int acctype;
     String AccountID;
+    int userid;
     /**
      * Creates new form MakeTransaction
      */
-    public MakeTransaction(String accountID) {
+    public MakeTransaction(String accountID,int user) {
+        this.userid = user;
         this.AccountID = accountID;
         initComponents();
         PreparedStatement ps;
@@ -153,6 +155,11 @@ public class MakeTransaction extends javax.swing.JFrame {
         tfAmount.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         tfAmount.setForeground(new java.awt.Color(255, 255, 255));
         tfAmount.setCaretColor(new java.awt.Color(255, 255, 255));
+        tfAmount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAmountActionPerformed(evt);
+            }
+        });
 
         tfBalance.setEditable(false);
         tfBalance.setBackground(new java.awt.Color(29, 38, 125));
@@ -275,9 +282,33 @@ public class MakeTransaction extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnTransactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransactionActionPerformed
-           double amount = Double.parseDouble(tfAmount.getText());
-           
+           double minus =0;
+           double amount =0;
+        try{
+            amount = Double.parseDouble(tfAmount.getText());
+           minus = Balance - amount;}
+           catch(Exception e){
+             JOptionPane.showMessageDialog(this, "Amount must be a number!");
+             return;
+           }
+           if(amount <0){
+               JOptionPane.showMessageDialog(this, "Amount must be positive!");
+              return;
+           }
+           if(minus<0){
+              JOptionPane.showMessageDialog(this, "Insufficient Funds!");
+              return;
+           }
+           String selected = jAccountType.getSelectedItem().toString();
+           if("Transfer Funds".equals(selected)){
+               TransferFund trans = new TransferFund(amount,Balance,AccountID,acctype,this);
+               trans.setVisible(true);
+           }
     }//GEN-LAST:event_btnTransactionActionPerformed
+
+    private void tfAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAmountActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAmountActionPerformed
 
     /**
      * @param args the command line arguments

@@ -318,14 +318,14 @@ public class CustomerView extends javax.swing.JFrame {
 
     private void btnTransactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransactActionPerformed
         // TODO add your handling code here:
-         int index = jTable1.getSelectedRow();
+        int index = jTable1.getSelectedRow();
         PreparedStatement ps;
         String sql;
         if(index == -1) {
             JOptionPane.showMessageDialog(this, "Please select an account to close.");
         }
         String accountID = (String) jTable1.getValueAt(index, 0);
-        MakeTransaction transac = new MakeTransaction(accountID);
+        MakeTransaction transac = new MakeTransaction(accountID,userID);
          transac.setVisible(true);
          transac.addWindowListener(new WindowAdapter() {
             @Override
