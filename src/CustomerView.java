@@ -318,6 +318,7 @@ public class CustomerView extends javax.swing.JFrame {
 
     private void btnTransactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransactActionPerformed
         // TODO add your handling code here:
+        try{
         int index = jTable1.getSelectedRow();
         PreparedStatement ps;
         String sql;
@@ -332,7 +333,10 @@ public class CustomerView extends javax.swing.JFrame {
             public void windowClosed(WindowEvent e) {
                 displayTable();
             }
-        });
+        });}
+       catch(Exception e){
+           
+       }
     }//GEN-LAST:event_btnTransactActionPerformed
 
     /**
