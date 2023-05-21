@@ -20,6 +20,10 @@ public class AddAccount extends javax.swing.JFrame {
     /**
      * Creates new form AddAccount
      */
+    
+    public AddAccount() {
+    }
+
     public AddAccount(int userID) {
         initComponents();
         this.userID = userID;

@@ -10,7 +10,7 @@ public class MyConnection {
         Connection con = null;
         try {
             // Edit lang sa port
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/dbonlinebankingsystem", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbonlinebankingsystem", "root", "");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

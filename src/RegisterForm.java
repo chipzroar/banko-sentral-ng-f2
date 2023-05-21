@@ -270,6 +270,8 @@ public class RegisterForm extends javax.swing.JFrame {
         jTextAreaAddress.setCaretColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(jTextAreaAddress);
 
+        jDateChooserBirthDate.setBackground(new java.awt.Color(29, 38, 125));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -344,7 +346,7 @@ public class RegisterForm extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(jPasswordFieldConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(jDateChooserBirthDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -447,9 +449,6 @@ public class RegisterForm extends javax.swing.JFrame {
                 bdate = dateFormat.format(jDateChooserBirthDate.getDate());
             }
         }
-        
-        
-        
         
         PreparedStatement ps;
         String query = "INSERT INTO `user`( `username`, `password`, `firstName`, `middleName`, `lastName`, `email`, `phone`, `address`, `userType`, `birthDate`) VALUES (?,?,?,?,?,?,?,?,?,?)";

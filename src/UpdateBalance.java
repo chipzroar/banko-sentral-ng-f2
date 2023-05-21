@@ -2,9 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package checkbal_checkint_updatebal;
 
+import java.sql.*;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,6 +18,18 @@ public class UpdateBalance extends javax.swing.JFrame {
     /**
      * Creates new form UpdateBalance
      */
+    String accountNumber;
+    double balance;
+    int userID;
+    public UpdateBalance(String accountNumber, double balance, int userID) {
+        initComponents();
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.userID = userID;
+        jTextFieldAccNum.setText(accountNumber);
+        jTextFieldCurrBal.setText(String.valueOf(balance));
+    }
+
     public UpdateBalance() {
         initComponents();
     }
@@ -28,22 +43,101 @@ public class UpdateBalance extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabelMin = new javax.swing.JLabel();
-        jLabelClose = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldAccNum = new javax.swing.JTextField();
         jButtonUpdateBalance = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jTextFieldYears = new javax.swing.JTextField();
+        jTextFieldAmount = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextFieldTotalInterestAmount = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jTextFieldCurrBal = new javax.swing.JTextField();
+        cbTransType = new javax.swing.JComboBox<>();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelMin = new javax.swing.JLabel();
+        jLabelClose = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        jPanel2.setBackground(new java.awt.Color(12, 19, 79));
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Account Number:");
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Transaction Type:");
+
+        jTextFieldAccNum.setEditable(false);
+        jTextFieldAccNum.setBackground(new java.awt.Color(29, 38, 125));
+        jTextFieldAccNum.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jTextFieldAccNum.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldAccNum.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldAccNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAccNumActionPerformed(evt);
+            }
+        });
+
+        jButtonUpdateBalance.setBackground(new java.awt.Color(29, 38, 125));
+        jButtonUpdateBalance.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButtonUpdateBalance.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonUpdateBalance.setText("Update Balance");
+        jButtonUpdateBalance.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonUpdateBalanceMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButtonUpdateBalanceMouseReleased(evt);
+            }
+        });
+        jButtonUpdateBalance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUpdateBalanceActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Enter Amount:");
+
+        jTextFieldAmount.setBackground(new java.awt.Color(29, 38, 125));
+        jTextFieldAmount.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jTextFieldAmount.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldAmount.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldAmount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldAmountActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Current Balance:");
+
+        jTextFieldCurrBal.setEditable(false);
+        jTextFieldCurrBal.setBackground(new java.awt.Color(29, 38, 125));
+        jTextFieldCurrBal.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jTextFieldCurrBal.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldCurrBal.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextFieldCurrBal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldCurrBalActionPerformed(evt);
+            }
+        });
+
+        cbTransType.setBackground(new java.awt.Color(29, 38, 125));
+        cbTransType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cbTransType.setForeground(new java.awt.Color(255, 255, 255));
+        cbTransType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select a Transaction--", "Withdraw", "Deposit" }));
+        cbTransType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTransTypeActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(92, 70, 156));
         jPanel1.setPreferredSize(new java.awt.Dimension(130, 59));
@@ -80,7 +174,7 @@ public class UpdateBalance extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 302, Short.MAX_VALUE)
                 .addComponent(jLabelMin, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelClose, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -97,83 +191,6 @@ public class UpdateBalance extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        jPanel2.setBackground(new java.awt.Color(12, 19, 79));
-
-        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Account Number:");
-
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Transaction Type:");
-
-        jTextFieldAccNum.setBackground(new java.awt.Color(29, 38, 125));
-        jTextFieldAccNum.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextFieldAccNum.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldAccNum.setCaretColor(new java.awt.Color(255, 255, 255));
-        jTextFieldAccNum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldAccNumActionPerformed(evt);
-            }
-        });
-
-        jButtonUpdateBalance.setBackground(new java.awt.Color(29, 38, 125));
-        jButtonUpdateBalance.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButtonUpdateBalance.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonUpdateBalance.setText("Update Balance");
-        jButtonUpdateBalance.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButtonUpdateBalanceMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButtonUpdateBalanceMouseReleased(evt);
-            }
-        });
-        jButtonUpdateBalance.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonUpdateBalanceActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Enter Amount:");
-
-        jTextFieldYears.setBackground(new java.awt.Color(29, 38, 125));
-        jTextFieldYears.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextFieldYears.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldYears.setCaretColor(new java.awt.Color(255, 255, 255));
-        jTextFieldYears.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldYearsActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Current Balance:");
-
-        jTextFieldTotalInterestAmount.setEditable(false);
-        jTextFieldTotalInterestAmount.setBackground(new java.awt.Color(29, 38, 125));
-        jTextFieldTotalInterestAmount.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextFieldTotalInterestAmount.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTotalInterestAmount.setCaretColor(new java.awt.Color(255, 255, 255));
-        jTextFieldTotalInterestAmount.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldTotalInterestAmountActionPerformed(evt);
-            }
-        });
-
-        jComboBox1.setBackground(new java.awt.Color(29, 38, 125));
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Select a Transaction--", "Withdraw", "Deposit" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -186,7 +203,7 @@ public class UpdateBalance extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel7)
                             .addGap(48, 48, 48)
-                            .addComponent(jTextFieldTotalInterestAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldCurrBal, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel4)
@@ -194,33 +211,35 @@ public class UpdateBalance extends javax.swing.JFrame {
                                 .addComponent(jLabel6))
                             .addGap(38, 38, 38)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextFieldYears, javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jTextFieldAmount, javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jTextFieldAccNum)
-                                .addComponent(jComboBox1, 0, 266, Short.MAX_VALUE)))))
+                                .addComponent(cbTransType, 0, 266, Short.MAX_VALUE)))))
                 .addContainerGap(37, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextFieldAccNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbTransType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldYears, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldTotalInterestAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCurrBal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonUpdateBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -228,14 +247,10 @@ public class UpdateBalance extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -262,20 +277,79 @@ public class UpdateBalance extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonUpdateBalanceMouseReleased
 
     private void jButtonUpdateBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateBalanceActionPerformed
+        String accountNumber = jTextFieldAccNum.getText();
+        double balance = Double.parseDouble(jTextFieldCurrBal.getText());
+        String strAmount = jTextFieldAmount.getText().trim();
+        String transactionType = cbTransType.getSelectedItem().toString();
 
+        if (transactionType.equals("--Select a Transaction--")) {
+            JOptionPane.showMessageDialog(this, "Please select a transaction type.");
+            return;
+        }
+        
+        if (strAmount.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter an amount.");
+            return;
+        }
+        
+        double amount = Double.parseDouble(jTextFieldAmount.getText());
+        PreparedStatement ps;
+        String sql;
+
+        try {
+            if (transactionType.equals("Deposit")) {
+                balance += amount;
+                sql = "UPDATE account SET accountBalance = ? WHERE accountID = ?";
+                ps = MyConnection.getConnection().prepareStatement(sql);
+                ps.setDouble(1, balance);
+                ps.setString(2, accountNumber);
+                ps.executeUpdate();
+
+                sql = "INSERT INTO transaction (accountID, transactionType, transactionAmount, transactionStatus) VALUES (?, ?, ?, ?)";
+                ps = MyConnection.getConnection().prepareStatement(sql);
+                ps.setString(1, accountNumber); 
+                ps.setString(2, "Deposit");  
+                ps.setDouble(3, amount);
+                ps.setInt(4, 1);  
+                ps.executeUpdate();
+            } else if (transactionType.equals("Withdraw")) {
+                if (amount > balance) {
+                    JOptionPane.showMessageDialog(this, "Insufficient balance.");
+                    return;
+                }
+                balance -= amount;
+                sql = "UPDATE account SET accountBalance = ? WHERE accountID = ?";
+                ps = MyConnection.getConnection().prepareStatement(sql);
+                ps.setDouble(1, balance);
+                ps.setString(2, accountNumber);
+                ps.executeUpdate();
+
+                sql = "INSERT INTO transaction (accountID, transactionType, transactionAmount, transactionStatus) VALUES (?, ?, ?, ?)";
+                ps = MyConnection.getConnection().prepareStatement(sql);
+                ps.setString(1, accountNumber);
+                ps.setString(2, "Withdraw");  
+                ps.setDouble(3, amount);
+                ps.setInt(4, 1);  
+                ps.executeUpdate();
+            }
+            JOptionPane.showMessageDialog(this, "Transaction successful.");
+            jTextFieldCurrBal.setText(String.valueOf(balance));
+        } catch(SQLException e) {
+            Logger.getLogger(UpdateBalance.class.getName()).log(Level.SEVERE, null, e);
+        } 
     }//GEN-LAST:event_jButtonUpdateBalanceActionPerformed
 
-    private void jTextFieldYearsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldYearsActionPerformed
+    private void jTextFieldAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldAmountActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldYearsActionPerformed
+    }//GEN-LAST:event_jTextFieldAmountActionPerformed
 
-    private void jTextFieldTotalInterestAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTotalInterestAmountActionPerformed
+    private void cbTransTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTransTypeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldTotalInterestAmountActionPerformed
+    }//GEN-LAST:event_cbTransTypeActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void jTextFieldCurrBalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldCurrBalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_jTextFieldCurrBalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,8 +387,8 @@ public class UpdateBalance extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbTransType;
     private javax.swing.JButton jButtonUpdateBalance;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -325,7 +399,7 @@ public class UpdateBalance extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextFieldAccNum;
-    private javax.swing.JTextField jTextFieldTotalInterestAmount;
-    private javax.swing.JTextField jTextFieldYears;
+    private javax.swing.JTextField jTextFieldAmount;
+    private javax.swing.JTextField jTextFieldCurrBal;
     // End of variables declaration//GEN-END:variables
 }

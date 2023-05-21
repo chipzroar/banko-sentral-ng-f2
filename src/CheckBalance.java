@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package checkbal_checkint_updatebal;
 
 import java.awt.Color;
 
@@ -15,6 +14,13 @@ public class CheckBalance extends javax.swing.JFrame {
     /**
      * Creates new form CheckBalance
      */
+    private int userID;
+    public CheckBalance(String accountNumber, String balance) {
+        initComponents();
+        jTextFieldAccNum.setText(accountNumber);
+        jTextFieldCurrBal.setText(balance);
+    }
+
     public CheckBalance() {
         initComponents();
     }
@@ -28,19 +34,60 @@ public class CheckBalance extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabelMin = new javax.swing.JLabel();
-        jLabelClose = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldAccNum = new javax.swing.JTextField();
-        jTextFieldPassword = new javax.swing.JTextField();
-        jLabelNote = new javax.swing.JLabel();
-        jButtonCheckBalance = new javax.swing.JButton();
+        jTextFieldCurrBal = new javax.swing.JTextField();
+        jButtonUpdateBal = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelMin = new javax.swing.JLabel();
+        jLabelClose = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+
+        jPanel2.setBackground(new java.awt.Color(12, 19, 79));
+        jPanel2.setMinimumSize(new java.awt.Dimension(0, 0));
+
+        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Account Number:");
+
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Current Balance:");
+
+        jTextFieldAccNum.setEditable(false);
+        jTextFieldAccNum.setBackground(new java.awt.Color(29, 38, 125));
+        jTextFieldAccNum.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jTextFieldAccNum.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldAccNum.setCaretColor(new java.awt.Color(255, 255, 255));
+
+        jTextFieldCurrBal.setEditable(false);
+        jTextFieldCurrBal.setBackground(new java.awt.Color(29, 38, 125));
+        jTextFieldCurrBal.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jTextFieldCurrBal.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldCurrBal.setCaretColor(new java.awt.Color(255, 255, 255));
+
+        jButtonUpdateBal.setBackground(new java.awt.Color(29, 38, 125));
+        jButtonUpdateBal.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButtonUpdateBal.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonUpdateBal.setText("Update Balance");
+        jButtonUpdateBal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButtonUpdateBalMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButtonUpdateBalMouseReleased(evt);
+            }
+        });
+        jButtonUpdateBal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonUpdateBalActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(92, 70, 156));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -94,55 +141,6 @@ public class CheckBalance extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
-        jPanel2.setBackground(new java.awt.Color(12, 19, 79));
-        jPanel2.setMinimumSize(new java.awt.Dimension(0, 0));
-
-        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Account Number:");
-
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Password:");
-
-        jTextFieldAccNum.setBackground(new java.awt.Color(29, 38, 125));
-        jTextFieldAccNum.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextFieldAccNum.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldAccNum.setCaretColor(new java.awt.Color(255, 255, 255));
-
-        jTextFieldPassword.setBackground(new java.awt.Color(29, 38, 125));
-        jTextFieldPassword.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextFieldPassword.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldPassword.setCaretColor(new java.awt.Color(255, 255, 255));
-
-        jLabelNote.setFont(new java.awt.Font("Helvetica Neue", 3, 10)); // NOI18N
-        jLabelNote.setForeground(new java.awt.Color(255, 0, 0));
-        jLabelNote.setText("Note: Never share your passwords to anyone!");
-        jLabelNote.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelNote.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelNoteMouseClicked(evt);
-            }
-        });
-
-        jButtonCheckBalance.setBackground(new java.awt.Color(29, 38, 125));
-        jButtonCheckBalance.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButtonCheckBalance.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonCheckBalance.setText("Check Balance");
-        jButtonCheckBalance.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jButtonCheckBalanceMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButtonCheckBalanceMouseReleased(evt);
-            }
-        });
-        jButtonCheckBalance.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCheckBalanceActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -151,55 +149,45 @@ public class CheckBalance extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonCheckBalance))
+                        .addComponent(jButtonUpdateBal))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldAccNum))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(72, 72, 72)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabelNote)
-                                        .addGap(0, 72, Short.MAX_VALUE))
-                                    .addComponent(jTextFieldPassword))))))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldCurrBal)
+                            .addComponent(jTextFieldAccNum, javax.swing.GroupLayout.DEFAULT_SIZE, 294, Short.MAX_VALUE))))
                 .addGap(52, 52, 52))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextFieldAccNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelNote)
-                .addGap(27, 27, 27)
-                .addComponent(jButtonCheckBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                    .addComponent(jTextFieldCurrBal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButtonUpdateBal, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -213,21 +201,22 @@ public class CheckBalance extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabelCloseMouseClicked
 
-    private void jLabelNoteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelNoteMouseClicked
+    private void jButtonUpdateBalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonUpdateBalMousePressed
+        jButtonUpdateBal.setBackground(new Color(212, 173, 252));
+    }//GEN-LAST:event_jButtonUpdateBalMousePressed
 
-    }//GEN-LAST:event_jLabelNoteMouseClicked
+    private void jButtonUpdateBalMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonUpdateBalMouseReleased
+        jButtonUpdateBal.setBackground(null);
+    }//GEN-LAST:event_jButtonUpdateBalMouseReleased
 
-    private void jButtonCheckBalanceMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCheckBalanceMousePressed
-        jButtonCheckBalance.setBackground(new Color(212, 173, 252));
-    }//GEN-LAST:event_jButtonCheckBalanceMousePressed
-
-    private void jButtonCheckBalanceMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCheckBalanceMouseReleased
-        jButtonCheckBalance.setBackground(null);
-    }//GEN-LAST:event_jButtonCheckBalanceMouseReleased
-
-    private void jButtonCheckBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCheckBalanceActionPerformed
-
-    }//GEN-LAST:event_jButtonCheckBalanceActionPerformed
+    private void jButtonUpdateBalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUpdateBalActionPerformed
+        String accountNumber = jTextFieldAccNum.getText();
+        double balance = Double.parseDouble(jTextFieldCurrBal.getText());
+        UpdateBalance updateBal = new UpdateBalance(accountNumber, balance, userID);
+        updateBal.setVisible(true);
+        updateBal.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jButtonUpdateBalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,16 +254,15 @@ public class CheckBalance extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCheckBalance;
+    private javax.swing.JButton jButtonUpdateBal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelClose;
     private javax.swing.JLabel jLabelMin;
-    private javax.swing.JLabel jLabelNote;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextFieldAccNum;
-    private javax.swing.JTextField jTextFieldPassword;
+    private javax.swing.JTextField jTextFieldCurrBal;
     // End of variables declaration//GEN-END:variables
 }

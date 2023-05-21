@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2023 at 07:05 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: May 21, 2023 at 11:16 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,8 +40,10 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`accountID`, `userID`, `accountType`, `status`, `accountBalance`) VALUES
+('12-345-678', 3, 1, 0, 3000),
 ('123-123-123', 1, 0, 0, 500),
-('123-123-124', 1, 1, 0, 1000);
+('123-123-124', 1, 1, 0, 1000),
+('21-1384-775', 3, 0, 0, 2000);
 
 -- --------------------------------------------------------
 
@@ -96,11 +98,20 @@ CREATE TABLE `loanapproval` (
 CREATE TABLE `transaction` (
   `transactionID` bigint(20) UNSIGNED NOT NULL,
   `accountID` varchar(20) DEFAULT NULL,
-  `transactionType` int(11) NOT NULL DEFAULT 0,
+  `transactionType` varchar(50) NOT NULL DEFAULT '0',
   `transactionAmount` double NOT NULL,
-  `transactionDate` date NOT NULL,
   `transactionStatus` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`transactionID`, `accountID`, `transactionType`, `transactionAmount`, `transactionStatus`) VALUES
+(1, '12-345-678', 'Withdraw', 1000, 1),
+(2, '12-345-678', 'Deposit', 2000, 1),
+(3, '21-1384-775', 'Withdraw', 2000, 1),
+(4, '21-1384-775', 'Deposit', 2000, 1);
 
 -- --------------------------------------------------------
 
@@ -112,6 +123,7 @@ CREATE TABLE `user` (
   `userID` bigint(20) UNSIGNED NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
+  `birthDate` date NOT NULL DEFAULT current_timestamp(),
   `firstName` varchar(20) NOT NULL,
   `middleName` varchar(20) DEFAULT NULL,
   `lastName` varchar(20) NOT NULL,
@@ -125,9 +137,10 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`userID`, `username`, `password`, `firstName`, `middleName`, `lastName`, `email`, `phone`, `address`, `userType`) VALUES
-(1, 'jreid22', '123456', 'James', 'Pogi', 'Reid', 'jreid22@gmail.com', '09054839283', '123 Pogi Street Fuente Cebu City', 0),
-(2, 'nlustre22', 'employee', 'Nadine', 'Imy', 'Lustre', 'nlustre22@bankosentralngf2.com', '09493869432', '111 Liko Sa Skina Rd Manila', 1);
+INSERT INTO `user` (`userID`, `username`, `password`, `birthDate`, `firstName`, `middleName`, `lastName`, `email`, `phone`, `address`, `userType`) VALUES
+(1, 'jreid22', '123456', '2023-05-21', 'James', 'Pogi', 'Reid', 'jreid22@gmail.com', '09054839283', '123 Pogi Street Fuente Cebu City', 0),
+(2, 'nlustre22', 'employee', '2023-05-21', 'Nadine', 'Imy', 'Lustre', 'nlustre22@bankosentralngf2.com', '09493869432', '111 Liko Sa Skina Rd Manila', 1),
+(3, 'cutiebronny', 'lebronn', '2003-03-21', 'Le Bronn', 'Abaniel', 'Samson', 'lebronntest@test.com', '099112233445', '456 Compostela Cebu City', 0);
 
 -- --------------------------------------------------------
 
@@ -217,13 +230,13 @@ ALTER TABLE `loanapproval`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `transactionID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `transactionID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
