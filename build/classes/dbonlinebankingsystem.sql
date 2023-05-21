@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2023 at 07:05 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: May 21, 2023 at 02:53 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,15 +33,17 @@ CREATE TABLE `account` (
   `accountType` int(11) NOT NULL DEFAULT 0,
   `status` int(11) NOT NULL DEFAULT 0,
   `accountBalance` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `account`
 --
 
 INSERT INTO `account` (`accountID`, `userID`, `accountType`, `status`, `accountBalance`) VALUES
-('123-123-123', 1, 0, 0, 500),
-('123-123-124', 1, 1, 0, 1000);
+('123-123-123', 1, 0, 0, 450),
+('123-123-124', 1, 1, 0, 1000),
+('589-789-456', 2, 0, 0, 998),
+('696-696-696', 1, 2, 0, 40);
 
 -- --------------------------------------------------------
 
@@ -57,7 +59,7 @@ CREATE TABLE `card` (
   `expiryDate` date NOT NULL,
   `cvv` int(11) NOT NULL,
   `cardStatus` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -71,7 +73,7 @@ CREATE TABLE `loanapplication` (
   `paymentDueDate` date NOT NULL,
   `paymentAmount` double NOT NULL,
   `loanApproval` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -85,7 +87,7 @@ CREATE TABLE `loanapproval` (
   `loanAmount` double NOT NULL,
   `interestRate` float NOT NULL,
   `loanTerm` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -96,11 +98,23 @@ CREATE TABLE `loanapproval` (
 CREATE TABLE `transaction` (
   `transactionID` bigint(20) UNSIGNED NOT NULL,
   `accountID` varchar(20) DEFAULT NULL,
-  `transactionType` int(11) NOT NULL DEFAULT 0,
+  `toaccountID` varchar(50) DEFAULT NULL,
+  `transactionType` varchar(50) NOT NULL DEFAULT '0',
   `transactionAmount` double NOT NULL,
-  `transactionDate` date NOT NULL,
   `transactionStatus` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`transactionID`, `accountID`, `toaccountID`, `transactionType`, `transactionAmount`, `transactionStatus`) VALUES
+(1, '123-123-123', '123-123-123', 'Transfer Funds', 10, 1),
+(2, '123-123-123', '123-123-123', 'Transfer Funds', 10, 1),
+(3, '123-123-123', '589-789-456', 'Transfer Funds', 10, 1),
+(4, '123-123-123', '589-789-456', 'Transfer Funds', 10, 1),
+(5, '123-123-123', '123-123-123 ', 'Transfer Funds', 10, 1),
+(6, '123-123-123', '589-789-456', 'Transfer Funds', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -119,7 +133,7 @@ CREATE TABLE `user` (
   `phone` varchar(20) NOT NULL,
   `address` varchar(100) NOT NULL,
   `userType` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
@@ -141,7 +155,7 @@ CREATE TABLE `verification` (
   `amount` double DEFAULT NULL,
   `typeoftransaction` varchar(20) DEFAULT NULL,
   `status` int(11) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `verification`
@@ -149,7 +163,10 @@ CREATE TABLE `verification` (
 
 INSERT INTO `verification` (`customerID`, `accountID`, `amount`, `typeoftransaction`, `status`) VALUES
 (1, '123-123-134', 0, 'close', 1),
-(1, '123-123-134', 0, 'close', 1);
+(1, '123-123-134', 0, 'close', 1),
+(1, '696-696-696', 0, 'close', 0),
+(1, '696-696-696', 0, 'close', 0),
+(1, '696-696-696', 0, 'close', 0);
 
 --
 -- Indexes for dumped tables
@@ -217,7 +234,7 @@ ALTER TABLE `loanapproval`
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `transactionID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `transactionID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`

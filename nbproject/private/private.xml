@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/NetbeansProjects/banko-sentral-ng-f2/src/DisplayLoginError.java</file>
-            <file>file:/E:/NetbeansProjects/banko-sentral-ng-f2/src/AddAccount.java</file>
-            <file>file:/E:/NetbeansProjects/banko-sentral-ng-f2/src/RegisterForm.java</file>
-            <file>file:/E:/NetbeansProjects/banko-sentral-ng-f2/src/CustomerView.java</file>
-            <file>file:/E:/NetbeansProjects/banko-sentral-ng-f2/src/MyConnection.java</file>
-            <file>file:/E:/NetbeansProjects/banko-sentral-ng-f2/src/LoginForm.java</file>
-            <file>file:/E:/NetbeansProjects/banko-sentral-ng-f2/src/Home.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/MakeTransaction.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/AddAccount.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/MyConnection.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/RegisterForm.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/CustomerView.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/EmployeeView.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/LoginForm.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/dbonlinebankingsystem.sql</file>
         </group>
     </open-files>
 </project-private>
