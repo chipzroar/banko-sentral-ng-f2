@@ -83,7 +83,7 @@ public class JEmpDashboard extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("TITLE");
+        jLabel1.setText("BANKO");
 
         btnBack.setText("BACK TO TRANSACTION");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -102,8 +102,8 @@ public class JEmpDashboard extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(sidePanelLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel1)))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         sidePanelLayout.setVerticalGroup(

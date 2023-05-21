@@ -17,7 +17,7 @@ public class Connect {
 
     public Connect() {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbonlinebankingsystem", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/dbonlinebankingsystem", "root", "");
             //JOptionPane.showMessageDialog(null, "Connected");
         } catch (SQLException ex) {
             Logger.getLogger(Connect.class.getName()).log(Level.SEVERE, null, ex);
