@@ -206,6 +206,11 @@ public class CustomerView extends javax.swing.JFrame {
         btnTransact.setForeground(new java.awt.Color(255, 255, 255));
         btnTransact.setText("Make Transaction");
         btnTransact.setMinimumSize(new java.awt.Dimension(118, 26));
+        btnTransact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTransactActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -310,6 +315,25 @@ public class CustomerView extends javax.swing.JFrame {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnCloseAccountActionPerformed
+
+    private void btnTransactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransactActionPerformed
+        // TODO add your handling code here:
+         int index = jTable1.getSelectedRow();
+        PreparedStatement ps;
+        String sql;
+        if(index == -1) {
+            JOptionPane.showMessageDialog(this, "Please select an account to close.");
+        }
+        String accountID = (String) jTable1.getValueAt(index, 0);
+        MakeTransaction transac = new MakeTransaction(accountID);
+         transac.setVisible(true);
+         transac.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                displayTable();
+            }
+        });
+    }//GEN-LAST:event_btnTransactActionPerformed
 
     /**
      * @param args the command line arguments
