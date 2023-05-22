@@ -261,6 +261,25 @@ public class AddAccount extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Balance cannot be negative");
         } else {
             PreparedStatement ps;
+            String sql = "SELECT * FROM account WHERE accountID = ?";
+            
+            try {
+                ps = MyConnection.getConnection().prepareStatement(sql);
+                ps.setString(1, accountID);
+                
+                ResultSet rs = ps.executeQuery();
+                if(rs.next()) {
+                    if(rs.getInt("status") == 1) {
+                        JOptionPane.showMessageDialog(this, "Account exists and is closed.");
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Account already exists.");
+                    }
+                    return;
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(RegisterForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
             String query = "INSERT INTO `verification`(`customerID`, `accountID`, `amount`, `typeoftransaction`, `accountType`, `status`) VALUES (?,?,?,?,?,?)";
 
             try {
