@@ -291,11 +291,11 @@ public class MakeTransaction extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(this, "Amount must be a number!");
              return;
            }
-           if(amount <0){
-               JOptionPane.showMessageDialog(this, "Amount must be positive!");
+           if(amount <= 0){
+               JOptionPane.showMessageDialog(this, "Amount must be greater than 0!");
               return;
            }
-           if(minus<0){
+           if(minus <= 0){
               JOptionPane.showMessageDialog(this, "Insufficient Funds!");
               return;
            }

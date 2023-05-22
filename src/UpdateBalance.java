@@ -292,9 +292,16 @@ public class UpdateBalance extends javax.swing.JFrame {
             return;
         }
         
-        double amount = Double.parseDouble(jTextFieldAmount.getText());
-        if(amount < 0) {
-            JOptionPane.showMessageDialog(this, "Cannot be negative.");
+        double amount;
+        
+        try {
+            amount = Double.parseDouble(jTextFieldAmount.getText());
+        } catch(NumberFormatException e ) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid amount.");
+            return;
+        }
+        if(amount <= 0) {
+            JOptionPane.showMessageDialog(this, "Cannot be negative or equal to 0.");
             return;
         }
         PreparedStatement ps;
