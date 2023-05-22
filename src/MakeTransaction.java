@@ -304,6 +304,14 @@ public class MakeTransaction extends javax.swing.JFrame {
                TransferFund trans = new TransferFund(amount,Balance,AccountID,acctype,this);
                trans.setVisible(true);
            }
+           else if("Pay Bills".equals(selected)){
+               PayBills pay = new PayBills(amount,AccountID,Balance,this);
+               pay.setVisible(true);
+           }
+           else if("Buy Load".equals(selected)){
+               BuyLoad load = new BuyLoad(amount,AccountID,Balance,this);
+               load.setVisible(true);
+           }
     }//GEN-LAST:event_btnTransactionActionPerformed
 
     private void tfAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAmountActionPerformed
