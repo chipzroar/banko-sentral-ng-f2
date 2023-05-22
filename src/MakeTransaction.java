@@ -149,7 +149,7 @@ public class MakeTransaction extends javax.swing.JFrame {
         jAccountType.setBackground(new java.awt.Color(29, 38, 125));
         jAccountType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jAccountType.setForeground(new java.awt.Color(255, 255, 255));
-        jAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Transfer Funds", "Pay Bills" }));
+        jAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Transfer Funds", "Pay Bills", "Buy Load", "Invest Money" }));
 
         tfAmount.setBackground(new java.awt.Color(29, 38, 125));
         tfAmount.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N

@@ -73,13 +73,19 @@ public class Connect {
     }
    }
     
-    public boolean loanApproval(LoanApproval la, int userID) {
+    public boolean loanApproval(LoanApproval la, int userID, String loanType) {
     try {
-        String sql = "SELECT COUNT(*) FROM loanapproval WHERE userID='" + userID + "'";
+        String sql = "SELECT * FROM loanapplication WHERE userID='" + userID + "'" + "AND loanType = '" + loanType + "'";
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
+        rs.next();
+        int loanID = rs.getInt("loanID");
+        sql = "SELECT COUNT(*) FROM loanapproval WHERE userID='" + userID + "'";
+        
+        rs = stmt.executeQuery(sql);
         if (rs.next() && rs.getInt(1) < 2) {
-            sql = "INSERT INTO loanapproval (userID, loanType, loanAmount, interestRate, loanTerm, loanStatus) VALUES ('" +
+            sql = "INSERT INTO loanapproval (loanID, userID, loanType, loanAmount, interestRate, loanTerm, loanStatus) VALUES (" +
+            loanID + ", '" +
             userID + "', '" +
             la.getLoanType() + "', " +
             la.getLoanAmount() + ", " +

@@ -161,7 +161,7 @@ public class AddAccount extends javax.swing.JFrame {
         jAccountType.setBackground(new java.awt.Color(29, 38, 125));
         jAccountType.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jAccountType.setForeground(new java.awt.Color(255, 255, 255));
-        jAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Savings Account", "Checking Account", "Loan Account" }));
+        jAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Savings Account", "Checking Account" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -228,6 +228,7 @@ public class AddAccount extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabelMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelMinMouseClicked
@@ -260,18 +261,20 @@ public class AddAccount extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Balance cannot be negative");
         } else {
             PreparedStatement ps;
-            String query = "INSERT INTO `account`(`accountID`, `userID`, `accountBalance`, `accountType`) VALUES (?,?,?,?)";
+            String query = "INSERT INTO `verification`(`customerID`, `accountID`, `amount`, `typeoftransaction`, `accountType`, `status`) VALUES (?,?,?,?,?,?)";
 
             try {
                 ps = MyConnection.getConnection().prepareStatement(query);
 
-                ps.setString(1, accountID);
-                ps.setInt(2, userID);
+                ps.setInt(1, userID);
+                ps.setString(2, accountID);
                 ps.setDouble(3, balance);
-                ps.setInt(4, accountType);
+                ps.setString(4,"add");
+                ps.setInt(5, accountType);
+                ps.setInt(6, 0);
 
                 if(ps.executeUpdate() > 0) {
-                    JOptionPane.showMessageDialog(this, "New Account Added");
+                    JOptionPane.showMessageDialog(this, "Add account processing.");
                     this.dispose();
                 }
 

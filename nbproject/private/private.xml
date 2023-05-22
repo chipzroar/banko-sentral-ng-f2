@@ -5,12 +5,10 @@
         <group>
             <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/MakeTransaction.java</file>
             <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/AddAccount.java</file>
-            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/MyConnection.java</file>
-            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/RegisterForm.java</file>
-            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/CustomerView.java</file>
-            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/EmployeeView.java</file>
-            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/LoginForm.java</file>
-            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/dbonlinebankingsystem.sql</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/CheckBalance.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/JLoanApplication.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/JEmpDashboard.java</file>
+            <file>file:/Users/kenjiebalona/Projects/netbeans/login-register/src/Connect.java</file>
         </group>
     </open-files>
 </project-private>

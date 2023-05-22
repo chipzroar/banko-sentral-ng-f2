@@ -184,6 +184,11 @@ public class CustomerView extends javax.swing.JFrame {
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Check Balance");
         jButton1.setMinimumSize(new java.awt.Dimension(118, 26));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         btnAddAccount.setBackground(new java.awt.Color(29, 38, 125));
         btnAddAccount.setForeground(new java.awt.Color(255, 255, 255));
@@ -343,7 +348,8 @@ public class CustomerView extends javax.swing.JFrame {
         PreparedStatement ps;
         String sql;
         if(index == -1) {
-            JOptionPane.showMessageDialog(this, "Please select an account to close.");
+            JOptionPane.showMessageDialog(this, "Please select an account to make transaction.");
+            return;
         }
         String accountID = (String) jTable1.getValueAt(index, 0);
         MakeTransaction transac = new MakeTransaction(accountID,userID);
@@ -355,6 +361,42 @@ public class CustomerView extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_btnTransactActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        int index = jTable1.getSelectedRow();
+        if(index == -1) {
+            JOptionPane.showMessageDialog(this, "Please select an account first.");
+            return;
+        }
+        
+        String accountNumber = (String) jTable1.getValueAt(index, 0);
+        
+        PreparedStatement ps;
+        ResultSet rs;
+        String sql = null;
+        String balance = "";
+        
+        try {
+            sql = "SELECT accountBalance FROM account WHERE accountID = ?";
+            ps = MyConnection.getConnection().prepareStatement(sql);
+            ps.setString(1, accountNumber);
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                balance = rs.getString("accountBalance");
+            } else {
+                JOptionPane.showMessageDialog(this, "Account is not found.");
+                return;
+            }
+        } catch(SQLException e) {
+            Logger.getLogger(CustomerView.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+        CheckBalance checkBal = new CheckBalance(accountNumber, balance);
+        checkBal.show();
+        checkBal.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     /**

@@ -87,7 +87,7 @@ public class JTypeAndTerm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Consolas", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("TITLE");
+        jLabel1.setText("BANKO");
 
         jButton1.setText("LOAN DASHBOARD");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -115,16 +115,16 @@ public class JTypeAndTerm extends javax.swing.JFrame {
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(sidePanelLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel1)))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         sidePanelLayout.setVerticalGroup(
             sidePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sidePanelLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
+                .addGap(83, 83, 83)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
+                .addGap(61, 61, 61)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,7 +285,12 @@ public class JTypeAndTerm extends javax.swing.JFrame {
               // Remove the percentage symbol from interestStr
               interestStr = interestStr.replaceAll("%", "");
 
-              interest = Float.parseFloat(interestStr);
+              try {
+                  interest = Float.valueOf(interestStr);
+              } catch(Exception e) {
+                  
+              }
+              
 
               typeLoan.setText(type);
               termLoan.setText(term);

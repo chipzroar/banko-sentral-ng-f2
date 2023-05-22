@@ -302,12 +302,22 @@ public class EmployeeView extends javax.swing.JFrame {
         String typeoftransaction = (String) jTable1.getValueAt(index, 3);
         try {
             int resultUpdate;
-            if(typeoftransaction.equalsIgnoreCase("update")) {
-                sql = "UPDATE account SET accountBalance = ? WHERE accountID = ? && userID = ?";
+            if(typeoftransaction.equalsIgnoreCase("add")) {
+                sql = "SELECT * FROM verification where customerID = ? AND accountID = ?";
                 ps = MyConnection.getConnection().prepareStatement(sql);
-                ps.setDouble(1, amount);
+                ps.setInt(1, customerID);
                 ps.setString(2, accountID);
-                ps.setInt(3, customerID);
+                ResultSet rs = ps.executeQuery();
+                int accountType;
+                rs.next();
+                accountType = rs.getInt("accountType");
+                sql = "INSERT INTO `account`(`accountID`, `userID`, `accountType`, `status`, `accountBalance`) VALUES (?,?,?,?,?)";
+                ps = MyConnection.getConnection().prepareStatement(sql);
+                ps.setString(1, accountID);
+                ps.setInt(2, customerID);
+                ps.setInt(3, accountType);
+                ps.setInt(4, 1);
+                ps.setDouble(5, amount);
                 resultUpdate = ps.executeUpdate();
             } else {
                 sql = "DELETE FROM account WHERE accountID = ? && userID = ?";

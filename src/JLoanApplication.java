@@ -29,7 +29,7 @@ public class JLoanApplication extends javax.swing.JFrame {
        
     
     public JLoanApplication(int userID) {
-    this.userID = 1;  // set this.userID to the passed userID
+    this.userID = userID;  // set this.userID to the passed userID
     initComponents();
     conn = new Connect();
     SetDetails(this.userID); // call SetDetails using this.userID
@@ -221,22 +221,22 @@ public class JLoanApplication extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addComponent(jLabel20)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(JEmploymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel24)
-                    .addGroup(JEmploymentLayout.createSequentialGroup()
-                        .addComponent(empAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(2, 2, 2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(JEmploymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(empAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24))
+                .addGap(8, 8, 8)
                 .addGroup(JEmploymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(appOcupation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(JEmploymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel22)
-                        .addComponent(jLabel18)
-                        .addComponent(empNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(JEmploymentLayout.createSequentialGroup()
+                        .addGroup(JEmploymentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel18))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(empNo, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(appOcupation))
+                .addGap(17, 17, 17))
         );
 
-        jPanel1.add(JEmployment, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 670, 160));
+        jPanel1.add(JEmployment, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 710, 160));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Name:");
@@ -302,7 +302,7 @@ public class JLoanApplication extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel9)
-                .addContainerGap(508, Short.MAX_VALUE))
+                .addContainerGap(529, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -403,7 +403,7 @@ public class JLoanApplication extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        jPanel1.add(JContanInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 670, 140));
+        jPanel1.add(JContanInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 720, 140));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setText("Loan Amount:");
@@ -571,13 +571,12 @@ public class JLoanApplication extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(JLoanInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, -1));
+        jPanel1.add(JLoanInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, -1));
 
         jTitleBar.setBackground(new java.awt.Color(12, 19, 79));
         jTitleBar.setLayout(new java.awt.BorderLayout());
 
         lblTitle.setForeground(new java.awt.Color(204, 204, 204));
-        lblTitle.setText("Title");
         jTitleBar.add(lblTitle, java.awt.BorderLayout.CENTER);
 
         sidePanel.setBackground(new java.awt.Color(29, 38, 125));
@@ -612,8 +611,8 @@ public class JLoanApplication extends javax.swing.JFrame {
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(sidePanelLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(55, 55, 55)
+                        .addComponent(jLabel1)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         sidePanelLayout.setVerticalGroup(
@@ -656,17 +655,19 @@ public class JLoanApplication extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(sidePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addComponent(jLabel26))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(219, 219, 219)
+                                .addComponent(jLabel26))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGap(488, 488, 488)
+                                .addComponent(btnSubmit)))
+                        .addContainerGap(45, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSubmit)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 715, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(0, 0, 0)
@@ -724,6 +725,7 @@ public class JLoanApplication extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -782,7 +784,7 @@ public class JLoanApplication extends javax.swing.JFrame {
                 this.conn = new Connect();
                 conn.loanApply(lp,userID);
                 LoanApproval la = new LoanApproval(type,loanamount,annualinterest,loanterm,2);
-                conn.loanApproval(la,userID);
+                conn.loanApproval(la,userID, type);
         } else {
             // Variables are empty
             // Add your code here
