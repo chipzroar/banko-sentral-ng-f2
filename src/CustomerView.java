@@ -47,7 +47,7 @@ public class CustomerView extends javax.swing.JFrame {
                 
         jTable1.getTableHeader().setDefaultRenderer(headerRenderer);
         try {
-            sql = "SELECT * FROM account WHERE userID = ?";
+            sql = "SELECT * FROM account WHERE userID = ? AND status = 0";
             ps = MyConnection.getConnection().prepareStatement(sql);
             ps.setInt(1, userID);
             rs = ps.executeQuery();

@@ -316,11 +316,11 @@ public class EmployeeView extends javax.swing.JFrame {
                 ps.setString(1, accountID);
                 ps.setInt(2, customerID);
                 ps.setInt(3, accountType);
-                ps.setInt(4, 1);
+                ps.setInt(4, 0);
                 ps.setDouble(5, amount);
                 resultUpdate = ps.executeUpdate();
             } else {
-                sql = "DELETE FROM account WHERE accountID = ? && userID = ?";
+                sql = "UPDATE account SET status = 1 WHERE accountID = ? && userID = ?";
                 ps = MyConnection.getConnection().prepareStatement(sql);
                 ps.setString(1, accountID);
                 ps.setInt(2, customerID);
